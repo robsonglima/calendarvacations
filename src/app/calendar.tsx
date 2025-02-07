@@ -104,11 +104,16 @@ function Calendar({ year }: { year: number }) {
               }
 
               return (
-                <div key={day} className={dayClassName}>
+                <div 
+                  key={day} 
+                  className={dayClassName}
+                >
                   <div className='day-number'>
-                  {day}                  
+                    {day}                  
                   </div>
-                  {isDayHoliday && <span className='holiday-name'>{calendarData.holidays[`${year}-${(monthIndex + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`]}</span>}
+                  {isDayHoliday && 
+                    <span className='holiday-name'>{calendarData.holidays[`${year}-${(monthIndex + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`]}</span>
+                  }
                 </div>
               );
             })}
